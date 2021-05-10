@@ -36,6 +36,7 @@ public class MenuActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
 
 
+
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private String mActivityTitle;
     private String[] items;
@@ -63,6 +64,7 @@ public class MenuActivity extends AppCompatActivity {
 
         View listHeaderView=getLayoutInflater().inflate(R.layout.drawer_header_layout,null,false);
         expandableListView.addHeaderView(listHeaderView);
+
 
         genData();
 
@@ -159,15 +161,20 @@ public class MenuActivity extends AppCompatActivity {
 
     private void genData() {
 
-        List<String> title= Arrays.asList("Week 1","Week 2","Week 3","Week 4");
-        List<String> childitem1=Arrays.asList("02.04.2020","03.04.2020","04.04.2020","05.04.2020","04.04.2020","05.04.2020");
+        List<String> title= Arrays.asList("Profile","Week 1","Week 2","Week 3","Week 4");
+        List<String> childitem1=Arrays.asList("02.04.2020");
         List<String> childitem2=Arrays.asList("12.04.2020","03.04.2020","04.04.2020","05.04.2020","04.04.2020","05.04.2020");
+        List<String> childitemprofile=Arrays.asList("Edit Profile","Logout");
 
         lstChild=  new TreeMap<>();
-        lstChild.put(title.get(0),childitem1);
+        lstChild.put(title.get(0),childitemprofile);
         lstChild.put(title.get(1),childitem2);
         lstChild.put(title.get(2),childitem2);
         lstChild.put(title.get(3),childitem2);
+        lstChild.put(title.get(4),childitem1);
+
+
+
 
 
 
@@ -180,7 +187,7 @@ public class MenuActivity extends AppCompatActivity {
 
     private void initItems() {
 
-        items=new String[] {"Week 1","Week 2","Week 3","Week 4"};
+        items=new String[] {"Profile","Week 1","Week 2","Week 3","Week 4"};
     }
 
     @Override

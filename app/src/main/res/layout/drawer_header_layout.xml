@@ -1,28 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical"
+<LinearLayout android:orientation="horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/amber">
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
 
-        app:srcCompat="@drawable/ic_baseline_person_24"
-        tools:ignore="VectorDrawableCompat" />
 
-    <TextView
-        android:id="@+id/drawer_userName_textView"
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        >
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="start"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_img"
+
+            app:srcCompat="@drawable/person_foreground"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/drawer_userName_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="User Name"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/drawer_kg_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="10dp"
+            android:text="Age :25"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:id="@+id/drawer_cm_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="10dp"
+            android:text="Height :175 cm "
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="10dp"
-        android:text="Birol Uzun"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:layout_gravity="end"
+        android:layout_margin="5dp"
+        android:src="@drawable/ic_baseline_logout_24"
+        app:fabSize="mini" />
+
 
 </LinearLayout>

@@ -24,6 +24,10 @@ public class ExpendableListAdapter extends BaseExpandableListAdapter {
         this.listItem = listItem;
     }
 
+    public ExpendableListAdapter(Context context, List<String> listTitle) {
+        this.context = context;
+        this.listTitle = listTitle;
+    }
 
     @Override
     public int getGroupCount() {
@@ -31,8 +35,10 @@ public class ExpendableListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public int getChildrenCount(int groupPosition) {
-        return listItem.size();
+    public int getChildrenCount(int i) {
+
+
+        return this.listItem.get(this.listTitle.get(i)).size();
     }
 
     @Override
@@ -43,9 +49,7 @@ public class ExpendableListAdapter extends BaseExpandableListAdapter {
     @Override
     public Object getChild(int groupPosition, int childPosition) {
 
-        if (listItem.get(listTitle.get(groupPosition)).get(childPosition)!=null)
-            return listItem.get(listTitle.get(groupPosition)).get(childPosition) ;
-        return null;
+        return listItem.get(listTitle.get(groupPosition)).get(childPosition) ;
     }
 
     @Override
