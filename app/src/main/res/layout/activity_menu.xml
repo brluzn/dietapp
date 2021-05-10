@@ -13,25 +13,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <FrameLayout
+            android:id="@+id/frame"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme" />
+            android:layout_height="match_parent"/>
 
 
     </LinearLayout>
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+    <ExpandableListView
+        android:id="@+id/navList"
+        android:layout_width="235dp"
         android:layout_height="match_parent"
         app:menu="@menu/nav_menu"
-        android:layout_gravity="start"
+        android:layout_gravity="start|left"
         android:fitsSystemWindows="true"
+        android:background="@color/white"
+        android:divider="@color/dark_gray"
+        android:dividerHeight="0.5dp"
+        android:indicatorLeft="?android:attr/expandableListPreferredChildIndicatorLeft"
 
         />
 
