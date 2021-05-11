@@ -92,7 +92,7 @@ public class MainActivity extends MenuActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         System.out.println(cUser);
-        DatabaseReference myRef = database.getReference(cUser.getUid() + "Users");
+        DatabaseReference myRef = database.getReference("Users").child(cUser.getUid());
 
 
 

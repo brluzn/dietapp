@@ -16,12 +16,23 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.TextView;
 
 import com.example.dietapp.Adapters.ExpendableListAdapter;
 import com.example.dietapp.Helper.FragmentNavigationManager;
 import com.example.dietapp.Helper.NavigationManager;
+import com.example.dietapp.Models.UserInfo;
 import com.example.dietapp.R;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -35,7 +46,9 @@ public class MenuActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
 
+    FirebaseAuth auth= FirebaseAuth.getInstance();
 
+    private ArrayList<UserInfo> info=new ArrayList<>();
 
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private String mActivityTitle;
@@ -47,7 +60,10 @@ public class MenuActivity extends AppCompatActivity {
     private Map<String,List<String>> lstChild;
     private NavigationManager navigationManager;
 
-
+    TextView username;
+    public TextView weight;
+    public TextView height;
+    public TextView bmi;
 
 
     @Override
@@ -60,11 +76,21 @@ public class MenuActivity extends AppCompatActivity {
         expandableListView=(ExpandableListView) findViewById(R.id.navList);
         navigationManager= FragmentNavigationManager.getmInstance(this);
 
+
+
+
         initItems();
 
         View listHeaderView=getLayoutInflater().inflate(R.layout.drawer_header_layout,null,false);
         expandableListView.addHeaderView(listHeaderView);
 
+
+        username=listHeaderView.findViewById(R.id.drawer_userName_textView);
+        weight=listHeaderView.findViewById(R.id.drawer_weight_textView);
+        height=listHeaderView.findViewById(R.id.drawer_height_textView);
+        bmi=listHeaderView.findViewById(R.id.drawer_bmi_textView);
+
+        loadData();
 
         genData();
 
@@ -203,6 +229,33 @@ public class MenuActivity extends AppCompatActivity {
         if (actionBarDrawerToggle.onOptionsItemSelected(item))
             return true;
         return super.onOptionsItemSelected(item);
+    }
+
+    public void loadData(){
+
+        FirebaseUser currentUser=auth.getCurrentUser();
+
+        DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
+        Query query=reference.child("Users").child(currentUser.getUid());
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                UserInfo a=snapshot.getValue(UserInfo.class);
+                info.add(a);
+                username.setText(info.get(0).user_firstname+" "+info.get(0).user_surname);
+                weight.setText("Weight:"+info.get(0).user_weight);
+                height.setText("Height:"+info.get(0).user_height);
+                bmi.setText("BMI:"+info.get(0).user_BMI);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
     }
 
 

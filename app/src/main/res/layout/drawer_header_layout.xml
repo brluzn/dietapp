@@ -16,6 +16,7 @@
         android:orientation="vertical"
         android:padding="15dp"
         >
+
         <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -37,22 +38,33 @@
             android:textSize="22sp"
             android:textStyle="bold" />
         <TextView
-            android:id="@+id/drawer_kg_textView"
+            android:id="@+id/drawer_weight_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
             android:layout_marginBottom="10dp"
-            android:text="Age :25"
+            android:text="Weight :null"
             android:textColor="@color/black"
             android:textSize="18sp"
             />
         <TextView
-            android:id="@+id/drawer_cm_textView"
+            android:id="@+id/drawer_height_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
             android:layout_marginBottom="10dp"
-            android:text="Height :175 cm "
+            android:text="Height :null "
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            />
+        <TextView
+
+            android:id="@+id/drawer_bmi_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="10dp"
+            android:text="BMI :null "
             android:textColor="@color/black"
             android:textSize="18sp"
             />

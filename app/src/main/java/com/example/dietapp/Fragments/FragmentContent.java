@@ -17,14 +17,19 @@ import com.example.dietapp.Activities.LoginActivity;
 import com.example.dietapp.Activities.MainActivity;
 import com.example.dietapp.Activities.MenuActivity;
 import com.example.dietapp.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import javax.sql.StatementEvent;
 
 
 public class FragmentContent extends Fragment {
-
+    FirebaseAuth auth= FirebaseAuth.getInstance();
 
     private static final String KEY_TITLE = "Content";
+
+    FirebaseUser currentUser=auth.getCurrentUser();
+
 
 
     TextView t_t;
@@ -67,6 +72,12 @@ public class FragmentContent extends Fragment {
         if(tiTle!=null){
             if (tiTle=="Edit Profile"){
 
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                startActivity(intent);
+            }
+            if (tiTle=="Logout"){
+
+                auth.signOut();
                 Intent intent = new Intent(getContext(), LoginActivity.class);
                 startActivity(intent);
             }

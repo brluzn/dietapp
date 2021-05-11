@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Intent intent=new Intent(LoginActivity.this, MainActivity.class);
+                    Intent intent=new Intent(LoginActivity.this, MenuActivity.class);
                     startActivity(intent);
                     finish();
 
@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser user=auth.getCurrentUser();
         if (user !=null){
-            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+            Intent intent=new Intent(LoginActivity.this,MenuActivity.class);
             startActivity(intent);
             finish();
         }

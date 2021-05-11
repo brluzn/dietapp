@@ -8,6 +8,9 @@ public class UserInfo {
     public String user_weight;
     public String user_BMI;
 
+    public UserInfo() {
+    }
+
     public UserInfo(String user_firstname, String user_surname, String user_gender, String user_height, String user_weight, String user_BMI) {
         this.user_firstname = user_firstname;
         this.user_surname = user_surname;
