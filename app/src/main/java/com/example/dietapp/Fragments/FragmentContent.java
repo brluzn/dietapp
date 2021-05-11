@@ -1,5 +1,6 @@
 package com.example.dietapp.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.dietapp.Activities.LoginActivity;
+import com.example.dietapp.Activities.MainActivity;
+import com.example.dietapp.Activities.MenuActivity;
 import com.example.dietapp.R;
 
 import javax.sql.StatementEvent;
@@ -60,10 +64,16 @@ public class FragmentContent extends Fragment {
         t_t=view.findViewById(R.id.tiTle);
         String tiTle=getArguments().getString(KEY_TITLE);
         System.out.println(tiTle);
-        if(tiTle!=null)
-            t_t.setText(tiTle);
+        if(tiTle!=null){
+            if (tiTle=="Edit Profile"){
+
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        }
+
         else
-            t_t.setText("Boş");
+            System.out.println("fragment hatası");
 
     }
 }

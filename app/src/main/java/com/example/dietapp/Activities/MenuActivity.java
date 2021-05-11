@@ -77,7 +77,7 @@ public class MenuActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setTitle("VVVV");
+        getSupportActionBar().setTitle("DietApp");
 
     }
 
@@ -109,7 +109,7 @@ public class MenuActivity extends AppCompatActivity {
                 @Override
                 public void onDrawerOpened(View drawerView) {
                     super.onDrawerOpened(drawerView);
-                  //  getSupportActionBar().setTitle("EDMTVDev");
+                  //  getSupportActionBar().setTitle("EDDev");
                     invalidateOptionsMenu();
                 }
 
@@ -138,7 +138,7 @@ public class MenuActivity extends AppCompatActivity {
         expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
             @Override
             public void onGroupCollapse(int groupPosition) {
-                getSupportActionBar().setTitle("EDMTVDev");
+                getSupportActionBar().setTitle("DietApp");
             }
         });
 
@@ -204,6 +204,8 @@ public class MenuActivity extends AppCompatActivity {
             return true;
         return super.onOptionsItemSelected(item);
     }
+
+
 
     /*@Override
     public void onBackPressed() {
