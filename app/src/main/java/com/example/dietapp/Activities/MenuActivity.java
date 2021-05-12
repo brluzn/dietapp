@@ -35,8 +35,11 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -91,6 +94,7 @@ public class MenuActivity extends AppCompatActivity {
         bmi=listHeaderView.findViewById(R.id.drawer_bmi_textView);
 
         loadData();
+        getDate();
 
         genData();
 
@@ -187,17 +191,23 @@ public class MenuActivity extends AppCompatActivity {
 
     private void genData() {
 
+        ArrayList<String> dates=getDate();
+
+
         List<String> title= Arrays.asList("Profile","Week 1","Week 2","Week 3","Week 4");
-        List<String> childitem1=Arrays.asList("02.04.2020");
-        List<String> childitem2=Arrays.asList("12.04.2020","03.04.2020","04.04.2020","05.04.2020","04.04.2020","05.04.2020");
+        List<String> childitem1=Arrays.asList(dates.get(0),dates.get(1),dates.get(2),dates.get(3),dates.get(4),dates.get(5),dates.get(6));
+        List<String> childitem2=Arrays.asList(dates.get(7),dates.get(8),dates.get(9),dates.get(10),dates.get(11),dates.get(12),dates.get(13));
+        List<String> childitem3=Arrays.asList(dates.get(14),dates.get(15),dates.get(16),dates.get(17),dates.get(18),dates.get(19),dates.get(20));
+        List<String> childitem4=Arrays.asList(dates.get(21),dates.get(22),dates.get(23),dates.get(24),dates.get(25),dates.get(26),dates.get(27));
+
         List<String> childitemprofile=Arrays.asList("Edit Profile","Logout");
 
         lstChild=  new TreeMap<>();
         lstChild.put(title.get(0),childitemprofile);
-        lstChild.put(title.get(1),childitem2);
+        lstChild.put(title.get(1),childitem1);
         lstChild.put(title.get(2),childitem2);
-        lstChild.put(title.get(3),childitem2);
-        lstChild.put(title.get(4),childitem1);
+        lstChild.put(title.get(3),childitem3);
+        lstChild.put(title.get(4),childitem4);
 
 
 
@@ -255,6 +265,35 @@ public class MenuActivity extends AppCompatActivity {
         });
 
 
+
+    }
+
+    public ArrayList<String> getDate(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+        ArrayList<String> date_lists=new ArrayList<>();
+
+
+        Calendar calendar = Calendar.getInstance();
+        Date date=calendar.getTime();
+        String date_S=sdf.format(date);
+        date_lists.add(date_S);
+
+        /*c.setTime(d);
+        int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+        System.out.println(dayOfWeek);*/
+
+
+        for (int i=0;i<30;i++){
+
+            calendar.add(Calendar.DATE,1);
+            date=calendar.getTime();
+             date_S=sdf.format(date);
+             date_lists.add(date_S);
+
+        }
+
+
+        return date_lists;
 
     }
 
