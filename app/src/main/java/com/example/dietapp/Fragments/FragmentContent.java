@@ -162,10 +162,10 @@ public class FragmentContent extends Fragment {
                 if (m1!=null||m2!=null||m3!=null){
                     breakfast.setText(m1.menu);
                     launch.setText(m2.menu);
-                    dinner.setText(m3.video);
-                    goDetails(breakfast_details,day,"Breakfast");
-                    goDetails(launch_details,day,"Launch");
-                    goDetails(dinner_details,day,"Dinner");
+                    dinner.setText(m3.menu);
+                    goDetails(breakfast_details,day,"Breakfast",bmi_state);
+                    goDetails(launch_details,day,"Launch",bmi_state);
+                    goDetails(dinner_details,day,"Dinner",bmi_state);
                 }
 
 
@@ -208,13 +208,14 @@ public class FragmentContent extends Fragment {
     }
 
 
-    public void goDetails(Button btn,String day,String time){
+    public void goDetails(Button btn,String day,String time,String bmi_state){
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), DetailsActivity.class);
                 intent.putExtra("day",day);
                 intent.putExtra("time",time);
+                intent.putExtra("bmi_state",bmi_state);
                 startActivity(intent);
             }
         });
