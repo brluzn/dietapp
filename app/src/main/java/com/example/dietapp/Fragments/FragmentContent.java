@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.dietapp.Activities.DetailsActivity;
@@ -30,7 +31,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.sql.StatementEvent;
 
@@ -51,6 +55,39 @@ public class FragmentContent extends Fragment {
     Button breakfast_details;
     Button launch_details;
     Button dinner_details;
+
+    LinearLayout LLayout_day;
+    LinearLayout LLayout_week;
+
+    TextView day1_week_breakfast;
+    TextView day1_week_launch;
+    TextView day1_week_dinner;
+    TextView day2_week_breakfast;
+    TextView day2_week_launch;
+    TextView day2_week_dinner;
+    TextView day3_week_breakfast;
+    TextView day3_week_launch;
+    TextView day3_week_dinner;
+    TextView day4_week_breakfast;
+    TextView day4_week_launch;
+    TextView day4_week_dinner;
+    TextView day5_week_breakfast;
+    TextView day5_week_launch;
+    TextView day5_week_dinner;
+    TextView day6_week_breakfast;
+    TextView day6_week_launch;
+    TextView day6_week_dinner;
+    TextView day7_week_breakfast;
+    TextView day7_week_launch;
+    TextView day7_week_dinner;
+    TextView day1_week;
+    TextView day2_week;
+    TextView day3_week;
+    TextView day4_week;
+    TextView day5_week;
+    TextView day6_week;
+    TextView day7_week;
+
 
 
     public FragmentContent() {
@@ -93,6 +130,8 @@ public class FragmentContent extends Fragment {
         launch_details=view.findViewById(R.id.launch_details);
         dinner_details=view.findViewById(R.id.dinner_details);
 
+        LLayout_day=view.findViewById(R.id.LLayout_day);
+        LLayout_week=view.findViewById(R.id.LLayout_week);
 
 
 
@@ -113,6 +152,9 @@ public class FragmentContent extends Fragment {
                 startActivity(intent);
             }
             else if (tiTle=="Profile"){
+                loadUserInfo();
+                LLayout_week.setVisibility(View.VISIBLE);
+                LLayout_day.setVisibility(View.GONE);
 
             }
             else {
@@ -123,6 +165,8 @@ public class FragmentContent extends Fragment {
                 today.setText(tiTle);
                 //getMenu();
                 loadUserInfo();
+                LLayout_week.setVisibility(View.GONE);
+                LLayout_day.setVisibility(View.VISIBLE);
 
 
 
@@ -195,6 +239,7 @@ public class FragmentContent extends Fragment {
                 user_info.add(a);
 
                 String bmi_state=user_info.get(0).user_bmi_state;
+                SettextWeek(bmi_state);
                 getMenu(bmi_state);
                 System.out.println("BBBBB"+ bmi_state);
             }
@@ -219,5 +264,182 @@ public class FragmentContent extends Fragment {
                 startActivity(intent);
             }
         });
+    }
+
+
+
+    public void getMenuWeek(String bmi_state,ArrayList<String> dates){
+
+        for (int i=0;i<7;i++){
+            String title=getArguments().getString(KEY_TITLE);
+
+            FirebaseUser currentUser=auth.getCurrentUser();
+
+            DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
+            Query query=reference.child("Lists").child(bmi_state);
+
+            query.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                    String a1=("Day"+dates.get(0).charAt(0)+dates.get(0).charAt(1));
+                    String a2=("Day"+dates.get(1).charAt(0)+dates.get(1).charAt(1));
+                    String a3=("Day"+dates.get(2).charAt(0)+dates.get(2).charAt(1));
+                    String a4=("Day"+dates.get(3).charAt(0)+dates.get(3).charAt(1));
+                    String a5=("Day"+dates.get(4).charAt(0)+dates.get(4).charAt(1));
+                    String a6=("Day"+dates.get(5).charAt(0)+dates.get(5).charAt(1));
+                    String a7=("Day"+dates.get(6).charAt(0)+dates.get(6).charAt(1));
+
+
+                    MenuModel m1=snapshot.child(a1).child("Breakfast").getValue(MenuModel.class);
+                    MenuModel m2=snapshot.child(a1).child("Launch").getValue(MenuModel.class);
+                    MenuModel m3=snapshot.child(a1).child("Dinner").getValue(MenuModel.class);
+
+                    MenuModel m4=snapshot.child(a2).child("Breakfast").getValue(MenuModel.class);
+                    MenuModel m5=snapshot.child(a2).child("Launch").getValue(MenuModel.class);
+                    MenuModel m6=snapshot.child(a2).child("Dinner").getValue(MenuModel.class);
+
+                    MenuModel m7=snapshot.child(a3).child("Breakfast").getValue(MenuModel.class);
+                    MenuModel m8=snapshot.child(a3).child("Launch").getValue(MenuModel.class);
+                    MenuModel m9=snapshot.child(a3).child("Dinner").getValue(MenuModel.class);
+
+                    MenuModel m10=snapshot.child(a4).child("Breakfast").getValue(MenuModel.class);
+                    MenuModel m11=snapshot.child(a4).child("Launch").getValue(MenuModel.class);
+                    MenuModel m12=snapshot.child(a4).child("Dinner").getValue(MenuModel.class);
+
+                    MenuModel m13=snapshot.child(a5).child("Breakfast").getValue(MenuModel.class);
+                    MenuModel m14=snapshot.child(a5).child("Launch").getValue(MenuModel.class);
+                    MenuModel m15=snapshot.child(a5).child("Dinner").getValue(MenuModel.class);
+
+                    MenuModel m16=snapshot.child(a6).child("Breakfast").getValue(MenuModel.class);
+                    MenuModel m17=snapshot.child(a6).child("Launch").getValue(MenuModel.class);
+                    MenuModel m18=snapshot.child(a6).child("Dinner").getValue(MenuModel.class);
+
+                    MenuModel m19=snapshot.child(a7).child("Breakfast").getValue(MenuModel.class);
+                    MenuModel m20=snapshot.child(a7).child("Launch").getValue(MenuModel.class);
+                    MenuModel m21=snapshot.child(a7).child("Dinner").getValue(MenuModel.class);
+
+                    if (m1!=null||m2!=null||m3!=null){
+
+
+                        day1_week_breakfast.setText(m1.menu);
+                        day1_week_launch.setText(m2.menu);
+                        day1_week_dinner.setText(m3.menu);
+                        day2_week_breakfast.setText(m4.menu);
+                        day2_week_launch.setText(m5.menu);
+                        day2_week_dinner.setText(m6.menu);
+                        day3_week_breakfast.setText(m7.menu);
+                        day3_week_launch.setText(m8.menu);
+                        day3_week_dinner.setText(m9.menu);
+                        day4_week_breakfast.setText(m10.menu);
+                        day4_week_launch.setText(m11.menu);
+                        day4_week_dinner.setText(m12.menu);
+                        day5_week_breakfast.setText(m13.menu);
+                        day5_week_launch.setText(m14.menu);
+                        day5_week_dinner.setText(m15.menu);
+                        day6_week_breakfast.setText(m16.menu);
+                        day6_week_launch.setText(m17.menu);
+                        day6_week_dinner.setText(m18.menu);
+                        day7_week_breakfast.setText(m19.menu);
+                        day7_week_launch.setText(m20.menu);
+                        day7_week_dinner.setText(m21.menu);
+                        day1_week.setText(dates.get(0));
+                        day2_week.setText(dates.get(1));
+                        day3_week.setText(dates.get(2));
+                        day4_week.setText(dates.get(3));
+                        day5_week.setText(dates.get(4));
+                        day6_week.setText(dates.get(5));
+                        day7_week.setText(dates.get(6));
+
+
+                    }
+
+
+
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+        }
+
+
+    }
+
+
+    public void SettextWeek(String bmi_state){
+
+            day1_week_breakfast=getView().findViewById(R.id.day1_week_breakfast);
+            day1_week_launch=getView().findViewById(R.id.day1_week_launch);
+            day1_week_dinner=getView().findViewById(R.id.day1_week_dinner);
+            day2_week_breakfast=getView().findViewById(R.id.day2_week_breakfast);
+            day2_week_launch=getView().findViewById(R.id.day2_week_launch);
+            day2_week_dinner=getView().findViewById(R.id.day2_week_dinner);
+            day3_week_breakfast=getView().findViewById(R.id.day3_week_breakfast);
+             day3_week_launch=getView().findViewById(R.id.day3_week_launch);
+             day3_week_dinner=getView().findViewById(R.id.day3_week_dinner);
+             day4_week_breakfast=getView().findViewById(R.id.day4_week_breakfast);
+             day4_week_launch=getView().findViewById(R.id.day4_week_launch);
+             day4_week_dinner=getView().findViewById(R.id.day4_week_dinner);
+             day5_week_breakfast=getView().findViewById(R.id.day5_week_breakfast);
+             day5_week_launch=getView().findViewById(R.id.day5_week_launch);
+             day5_week_dinner=getView().findViewById(R.id.day5_week_dinner);
+             day6_week_breakfast=getView().findViewById(R.id.day6_week_breakfast);
+             day6_week_launch=getView().findViewById(R.id.day6_week_launch);
+             day6_week_dinner=getView().findViewById(R.id.day6_week_dinner);
+             day7_week_breakfast=getView().findViewById(R.id.day7_week_breakfast);
+             day7_week_launch=getView().findViewById(R.id.day7_week_launch);
+             day7_week_dinner=getView().findViewById(R.id.day7_week_dinner);
+             day1_week=getView().findViewById(R.id.day1_week);
+             day2_week=getView().findViewById(R.id.day2_week);
+             day3_week=getView().findViewById(R.id.day3_week);
+             day4_week=getView().findViewById(R.id.day4_week);
+             day5_week=getView().findViewById(R.id.day5_week);
+             day6_week=getView().findViewById(R.id.day6_week);
+             day7_week=getView().findViewById(R.id.day7_week);
+             ArrayList<String> dates=getDateF();
+
+
+
+            getMenuWeek(bmi_state,dates);
+
+
+
+
+
+
+
+    }
+
+
+    public ArrayList<String> getDateF(){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+        ArrayList<String> date_lists=new ArrayList<>();
+
+
+        Calendar calendar = Calendar.getInstance();
+        Date date=calendar.getTime();
+        String date_S=sdf.format(date);
+        date_lists.add(date_S);
+
+        /*c.setTime(d);
+        int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+        System.out.println(dayOfWeek);*/
+
+
+        for (int i=0;i<30;i++){
+
+            calendar.add(Calendar.DATE,1);
+            date=calendar.getTime();
+            date_S=sdf.format(date);
+            date_lists.add(date_S);
+
+        }
+
+
+        return date_lists;
+
     }
 }
