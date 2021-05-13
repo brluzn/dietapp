@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -19,7 +20,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends MenuActivity {
+import java.text.DecimalFormat;
+
+public class MainActivity extends AppCompatActivity {
 
     Button submit;
     RadioButton radioButton;
@@ -28,6 +31,7 @@ public class MainActivity extends MenuActivity {
     EditText surname_input;
     EditText height_input;
     EditText weight_input;
+    FrameLayout frameLayout;
 
     FirebaseAuth auth= FirebaseAuth.getInstance();
 
@@ -35,9 +39,12 @@ public class MainActivity extends MenuActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LayoutInflater inflater=LayoutInflater.from(this);
+        setContentView(R.layout.activity_main);
+        /*LayoutInflater inflater=LayoutInflater.from(this);
         View view=inflater.inflate(R.layout.activity_main,null,false);
         drawerLayout.addView(view,0);
+        frameLayout=findViewById(R.id.frame);
+        frameLayout.setVisibility(View.INVISIBLE);*/
 
         FirebaseUser currentUser=auth.getCurrentUser();
         FirebaseUser cUser=currentUser;
@@ -65,7 +72,38 @@ public class MainActivity extends MenuActivity {
                 String weight=weight_input.getText().toString();
                 String gender=radioButton.getText().toString();
 
-                UserInfo user=new UserInfo(name,surname,gender,height,weight,"245");
+                String bmi_state=new String();
+
+                float height_m=(Float.parseFloat(height)/100);
+                float bmi=(Float.parseFloat(weight))/((height_m)*(height_m));
+                float roundedBmi = (float) (Math.round(bmi * 100.0) / 100.0);
+                System.out.println("bmi"+bmi);
+
+                if (bmi!=0){
+
+                    if (0.0<bmi && bmi<15.9){
+                        bmi_state="OverUnderweight";
+                    }
+                    else if (16.0<bmi && bmi<18.4){
+                        bmi_state="Underweight";
+                    }
+                    else if (18.5<bmi && bmi<24.9){
+                        bmi_state="Normal";
+                    }
+                    else if (25.0<bmi && bmi<29.9){
+                        bmi_state="Overweight";
+                    }
+                    else if (30.0<bmi && bmi<34.9){
+                        bmi_state="Obesity";
+                    }
+                    else
+                        bmi_state=null;
+
+                }
+
+
+                System.out.println("bmi____"+roundedBmi);
+                UserInfo user=new UserInfo(name,surname,gender,height,weight,String.valueOf(roundedBmi),bmi_state);
 
                 SendDatabase(user,cUser);
 

@@ -253,10 +253,12 @@ public class MenuActivity extends AppCompatActivity {
 
                 UserInfo a=snapshot.getValue(UserInfo.class);
                 info.add(a);
-                username.setText(info.get(0).user_firstname+" "+info.get(0).user_surname);
-                weight.setText("Weight:"+info.get(0).user_weight);
-                height.setText("Height:"+info.get(0).user_height);
-                bmi.setText("BMI:"+info.get(0).user_BMI);
+                if (a!=null){
+                    username.setText(info.get(0).user_firstname+" "+info.get(0).user_surname);
+                    weight.setText("Weight:"+info.get(0).user_weight);
+                    height.setText("Height:"+info.get(0).user_height);
+                    bmi.setText("BMI:"+info.get(0).user_BMI);
+                }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

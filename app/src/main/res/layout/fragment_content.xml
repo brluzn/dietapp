@@ -8,23 +8,165 @@
     android:orientation="vertical"
     tools:context=".Fragments.FragmentContent">
 
-    <FrameLayout
+    <TextView
+        android:id="@+id/today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TODAY"
+        android:layout_gravity="center"
+        android:layout_margin="29dp"
+        android:scrollbarSize="22sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        ></TextView>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+
         >
-
         <TextView
-            android:id="@+id/tiTle"
-            android:padding="10dp"
-            android:textColor="@color/black"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:layout_height="wrap_content"
+            android:text="Breakfast"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/red"
             />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+            <TextView
+                android:id="@+id/breakfast_text"
+                android:layout_width="350dp"
+                android:layout_height="115dp"
+                android:text=" Breakfast"
+                android:layout_gravity="center"
+
+                android:layout_marginLeft="8dp"
+                android:scrollbarSize="22sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="15dp"
+                android:background="@drawable/border_textview"
+
+                ></TextView>
+
+            <Button
+                android:id="@+id/breakfast_details"
+                android:layout_width="45dp"
+                android:layout_height="130dp"
+                android:text="DetaIls"
+                android:textSize="13sp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_gravity="center"
 
 
-    </FrameLayout>
+                android:textColor="@color/amber" />
+
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Launch"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/orange"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+            <TextView
+                android:id="@+id/launch_text"
+                android:layout_width="350dp"
+                android:layout_height="115dp"
+                android:text=" Launch"
+                android:layout_gravity="center"
+
+                android:layout_marginLeft="8dp"
+                android:scrollbarSize="22sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="15dp"
+                android:background="@drawable/border_textview2"
+
+                ></TextView>
+
+            <Button
+                android:id="@+id/launch_details"
+                android:layout_width="45dp"
+                android:layout_height="130dp"
+                android:text="DetaIls"
+                android:textSize="13sp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_gravity="center"
+
+
+                android:textColor="@color/amber" />
+
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dinner"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/teal_700"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+            <TextView
+                android:id="@+id/dinner_text"
+                android:layout_width="350dp"
+                android:layout_height="115dp"
+                android:text=" Dinner"
+                android:layout_gravity="center"
+
+                android:layout_marginLeft="8dp"
+                android:scrollbarSize="22sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="15dp"
+                android:background="@drawable/border_textview3"
+
+                ></TextView>
+
+            <Button
+                android:id="@+id/dinner_details"
+                android:layout_width="45dp"
+                android:layout_height="130dp"
+                android:text="DetaIls"
+                android:textSize="13sp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_gravity="center"
+
+
+                android:textColor="@color/amber" />
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
     <!-- TODO: Update blank fragment layout -->
 
 

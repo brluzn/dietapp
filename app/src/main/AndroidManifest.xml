@@ -9,10 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DietApp">
-        <activity android:name=".Activities.MenuActivity">
-
-
-        </activity>
+        <activity android:name=".Activities.DetailsActivity"></activity>
+        <activity android:name=".Activities.MenuActivity"></activity>
         <activity android:name=".Activities.SignUpActivity" />
         <activity android:name=".Activities.LoginActivity">
             <intent-filter>
@@ -20,9 +18,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".Activities.MainActivity"></activity>
+        <activity android:name=".Activities.MainActivity" />
     </application>
 
 </manifest>

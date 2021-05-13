@@ -89,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#572A2A"
+            android:background="#D2DDDADA"
             android:layout_margin="5dp"
             android:paddingTop="10dp"
             android:paddingLeft="15dp"

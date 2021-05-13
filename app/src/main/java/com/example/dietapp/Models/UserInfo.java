@@ -7,17 +7,19 @@ public class UserInfo {
     public String user_height;
     public String user_weight;
     public String user_BMI;
+    public String user_bmi_state;
 
     public UserInfo() {
     }
 
-    public UserInfo(String user_firstname, String user_surname, String user_gender, String user_height, String user_weight, String user_BMI) {
+    public UserInfo(String user_firstname, String user_surname, String user_gender, String user_height, String user_weight, String user_BMI, String user_bmi_state) {
         this.user_firstname = user_firstname;
         this.user_surname = user_surname;
         this.user_gender = user_gender;
         this.user_height = user_height;
         this.user_weight = user_weight;
         this.user_BMI = user_BMI;
+        this.user_bmi_state = user_bmi_state;
     }
 
     public String getUser_firstname() {
@@ -66,5 +68,13 @@ public class UserInfo {
 
     public void setUser_BMI(String user_BMI) {
         this.user_BMI = user_BMI;
+    }
+
+    public String getUser_bmi_state() {
+        return user_bmi_state;
+    }
+
+    public void setUser_bmi_state(String user_bmi_state) {
+        this.user_bmi_state = user_bmi_state;
     }
 }
