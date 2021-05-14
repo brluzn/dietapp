@@ -82,13 +82,8 @@ public class FragmentContent extends Fragment {
     TextView day7_week_breakfast;
     TextView day7_week_launch;
     TextView day7_week_dinner;
-    TextView day1_week;
-    TextView day2_week;
-    TextView day3_week;
-    TextView day4_week;
-    TextView day5_week;
-    TextView day6_week;
-    TextView day7_week;
+
+
     int counter=0;
 
     LinearLayout linear_day1;
@@ -106,6 +101,14 @@ public class FragmentContent extends Fragment {
     ImageView day5_imageview;
     ImageView day6_imageview;
     ImageView day7_imageview;
+
+    ImageView brekfast_imageview;
+    ImageView launch_imageview;
+    ImageView dinner_imageview;
+
+    LinearLayout linear_breakfast;
+    LinearLayout linear_launch;
+    LinearLayout linear_dinner;
 
 
 
@@ -227,6 +230,14 @@ public class FragmentContent extends Fragment {
         day7_imageview=getView().findViewById(R.id.day7_imageview);
         linear_day7=getView().findViewById(R.id.linear_day7);
 
+        brekfast_imageview=getView().findViewById(R.id.breakfast_imageview);
+        linear_breakfast=getView().findViewById(R.id.linear_breakfast);
+
+        launch_imageview=getView().findViewById(R.id.launch_imageview);
+        linear_launch=getView().findViewById(R.id.linear_launch);
+
+        dinner_imageview=getView().findViewById(R.id.dinner_imageview);
+        linear_dinner=getView().findViewById(R.id.linear_dinner);
 
         setIBtn(day1_imageview,linear_day1);
         setIBtn(day2_imageview,linear_day2);
@@ -235,6 +246,13 @@ public class FragmentContent extends Fragment {
         setIBtn(day5_imageview,linear_day5);
         setIBtn(day6_imageview,linear_day6);
         setIBtn(day7_imageview,linear_day7);
+
+
+        setIBtn(brekfast_imageview,linear_breakfast);
+        setIBtn(launch_imageview,linear_launch);
+        setIBtn(dinner_imageview,linear_dinner);
+
+
 
     }
 
@@ -414,13 +432,7 @@ public class FragmentContent extends Fragment {
                         day7_week_breakfast.setText(m19.menu);
                         day7_week_launch.setText(m20.menu);
                         day7_week_dinner.setText(m21.menu);
-                        /*day1_week.setText(dates.get(0));
-                        day2_week.setText(dates.get(1));
-                        day3_week.setText(dates.get(2));
-                        day4_week.setText(dates.get(3));
-                        day5_week.setText(dates.get(4));
-                        day6_week.setText(dates.get(5));
-                        day7_week.setText(dates.get(6));*/
+
 
 
                     }

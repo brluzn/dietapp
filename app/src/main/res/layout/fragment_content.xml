@@ -5,19 +5,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/bg"
     tools:context=".Fragments.FragmentContent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="visible"
-        >
+        android:visibility="visible">
 
         <LinearLayout
             android:id="@+id/LLayout_day"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="5dp"
             android:orientation="vertical"
             android:visibility="gone">
 
@@ -26,160 +28,351 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="29dp"
+                android:layout_marginTop="19dp"
                 android:scrollbarSize="22sp"
                 android:text="TODAY"
-                android:textColor="@color/black"
-                android:textStyle="bold"></TextView>
+                android:textColor="@color/orange"
+                android:textStyle="bold"
+                android:textSize="22sp"
+
+                ></TextView>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:orientation="vertical"
-
                 >
 
-                <TextView
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="Breakfast"
-                    android:textColor="@color/red"
-                    android:textSize="20sp" />
+                    android:layout_height="match_parent">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-
-                    >
+                    <ImageView
+                        android:id="@+id/breakfast_imageview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/image4"
+                        android:clickable="true"
+                        android:scaleType="centerCrop"/>
 
                     <TextView
-                        android:id="@+id/breakfast_text"
-                        android:layout_width="350dp"
-                        android:layout_height="115dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="8dp"
+                        android:layout_margin="0dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#AA000000"
 
-                        android:background="@drawable/border_textview"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Breakfast"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        android:textSize="24sp"
+                        android:text="Breakfast"
+                        android:textColor="#ffffffff" />
 
-                        ></TextView>
-
-                    <Button
-                        android:id="@+id/breakfast_details"
-                        android:layout_width="45dp"
-                        android:layout_height="130dp"
-                        android:layout_gravity="center"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp"
-                        android:text="DetaIls"
-                        android:textColor="@color/amber"
+                </RelativeLayout>
 
 
-                        android:textSize="13sp" />
+                <LinearLayout
+                    android:id="@+id/linear_breakfast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="vertical"
+                    android:visibility="gone"
 
+
+                    android:background="#EDEBEB"
+                    >
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/shadow_2341"
+
+
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Breakfast"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
+
+                            android:paddingLeft="25dp"
+                            android:paddingTop="25dp"
+                            android:textSize="20sp"
+
+                            />
+                        <TextView
+                            android:id="@+id/breakfast_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Breakfast"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+
+                            android:layout_marginBottom="9dp"
+                            ></TextView>
+
+                        <Button
+                            android:id="@+id/breakfast_details"
+
+                            android:layout_marginTop="10dp"
+                            android:layout_width="200dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+
+                            android:background="@drawable/buttonshape"
+                            android:foregroundTint="@color/black"
+                            android:shadowColor="#A8A8A8"
+                            android:shadowDx="-1"
+
+                            android:shadowDy="0"
+                            android:shadowRadius="5"
+                            android:text="Detaıls"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            app:backgroundTint="#3AC613"
+                            app:backgroundTintMode="screen" />
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="Launch"
-                    android:textColor="@color/orange"
-                    android:textSize="20sp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="vertical"
+                >
 
-                    >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/launch_imageview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:clickable="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image1" />
 
                     <TextView
-                        android:id="@+id/launch_text"
-                        android:layout_width="350dp"
-                        android:layout_height="115dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="8dp"
+                        android:layout_margin="0dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#AA000000"
 
-                        android:background="@drawable/border_textview2"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Launch"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        android:textSize="24sp"
+                        android:text="Launch"
+                        android:textColor="#ffffffff" />
 
-                        ></TextView>
-
-                    <Button
-                        android:id="@+id/launch_details"
-                        android:layout_width="45dp"
-                        android:layout_height="130dp"
-                        android:layout_gravity="center"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp"
-                        android:text="DetaIls"
-                        android:textColor="@color/amber"
+                </RelativeLayout>
 
 
-                        android:textSize="13sp" />
+                <LinearLayout
+                    android:id="@+id/linear_launch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="vertical"
+                    android:visibility="gone"
 
+
+                    android:background="#EDEBEB"
+                    >
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/shadow_2341"
+
+
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Launch"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
+
+                            android:paddingLeft="25dp"
+                            android:paddingTop="25dp"
+                            android:textSize="20sp"
+
+                            />
+                        <TextView
+                            android:id="@+id/launch_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Launch"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="9dp"
+                            ></TextView>
+
+                        <Button
+                            android:id="@+id/launch_details"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="200dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+
+                            android:background="@drawable/buttonshape"
+                            android:foregroundTint="@color/black"
+                            android:shadowColor="#A8A8A8"
+                            android:shadowDx="-1"
+
+                            android:shadowDy="0"
+                            android:shadowRadius="5"
+                            android:text="Detaıls"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            app:backgroundTint="#3AC613"
+                            app:backgroundTintMode="screen" />
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="Dinner"
-                    android:textColor="@color/teal_700"
-                    android:textSize="20sp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="vertical"
+                >
 
-                    >
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/dinner_imageview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/image7"
+                        android:clickable="true"
+                        android:scaleType="centerCrop"/>
 
                     <TextView
-                        android:id="@+id/dinner_text"
-                        android:layout_width="350dp"
-                        android:layout_height="115dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="8dp"
+                        android:layout_margin="0dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#AA000000"
 
-                        android:background="@drawable/border_textview3"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Dinner"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        android:textSize="24sp"
+                        android:text="Dinner"
+                        android:textColor="#ffffffff" />
 
-                        ></TextView>
-
-                    <Button
-                        android:id="@+id/dinner_details"
-                        android:layout_width="45dp"
-                        android:layout_height="130dp"
-                        android:layout_gravity="center"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp"
-                        android:text="DetaIls"
-                        android:textColor="@color/amber"
+                </RelativeLayout>
 
 
-                        android:textSize="13sp" />
+                <LinearLayout
+                    android:id="@+id/linear_dinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="vertical"
+                    android:visibility="gone"
 
+
+                    android:background="#EDEBEB"
+                    >
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/shadow_2341"
+
+
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Launch"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
+
+                            android:paddingLeft="25dp"
+                            android:paddingTop="25dp"
+                            android:textSize="20sp"
+
+                            />
+                        <TextView
+                            android:id="@+id/dinner_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Dinner"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="9dp"
+                            ></TextView>
+                        <Button
+                            android:id="@+id/dinner_details"
+
+                            android:layout_width="200dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/buttonshape"
+                            android:foregroundTint="@color/black"
+                            android:shadowColor="#A8A8A8"
+                            android:shadowDx="-1"
+
+                            android:shadowDy="0"
+                            android:shadowRadius="5"
+                            android:text="Detaıls"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            app:backgroundTint="#3AC613"
+                            app:backgroundTintMode="screen" />
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
+
+
             </LinearLayout>
 
 
@@ -191,6 +384,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:visibility="visible"
 
             >
 
@@ -305,6 +500,7 @@
                             android:text=" Dinner"
                             android:textColor="@color/black"
                             android:textStyle="bold"
+                            android:layout_marginBottom="9dp"
 
                             ></TextView>
                     </LinearLayout>
@@ -424,6 +620,7 @@
                             android:text=" Dinner"
                             android:textColor="@color/black"
                             android:textStyle="bold"
+                            android:layout_marginBottom="9dp"
 
                             ></TextView>
                     </LinearLayout>
@@ -543,7 +740,7 @@
                             android:text=" Dinner"
                             android:textColor="@color/black"
                             android:textStyle="bold"
-
+                            android:layout_marginBottom="9dp"
                             ></TextView>
                     </LinearLayout>
 
@@ -663,6 +860,7 @@
                             android:textColor="@color/black"
                             android:textStyle="bold"
 
+                            android:layout_marginBottom="9dp"
                             ></TextView>
                     </LinearLayout>
 
@@ -781,7 +979,7 @@
                             android:text=" Dinner"
                             android:textColor="@color/black"
                             android:textStyle="bold"
-
+                            android:layout_marginBottom="9dp"
                             ></TextView>
                     </LinearLayout>
 
@@ -900,7 +1098,7 @@
                             android:text=" Dinner"
                             android:textColor="@color/black"
                             android:textStyle="bold"
-
+                            android:layout_marginBottom="9dp"
                             ></TextView>
                     </LinearLayout>
 
@@ -1019,7 +1217,7 @@
                             android:text=" Dinner"
                             android:textColor="@color/black"
                             android:textStyle="bold"
-
+                            android:layout_marginBottom="9dp"
                             ></TextView>
                     </LinearLayout>
 
