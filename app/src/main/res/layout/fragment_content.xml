@@ -191,854 +191,844 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_marginTop="5dp"
+
             >
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_margin="4dp"
-                android:background="@color/amber"
+                android:orientation="vertical"
                 >
-                <TextView
-                    android:id="@+id/day1_week"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="DAY-1"
-                    android:paddingLeft="20dp"
-                    android:textColor="@color/red"
-                    android:paddingRight="20dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
 
-                    />
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/day1_imageview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/image1"
+                        android:clickable="true"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="0dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#AA000000"
+
+                        android:paddingLeft="25dp"
+                        android:textSize="24sp"
+                        android:text="7 Days Diet-Day1"
+                        android:textColor="#ffffffff" />
+
+                </RelativeLayout>
+
+
+
+
+
+
                 <LinearLayout
+                    android:id="@+id/linear_day1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Breakfast"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-
-                        />
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Launch"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    android:baselineAligned="false"
+                    android:orientation="vertical"
+                    android:visibility="gone"
 
 
-                        />
-                    <TextView
+                    android:background="#EDEBEB"
+                    >
 
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Dinner"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    <LinearLayout
 
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/shadow_2341"
 
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/day1_week_breakfast"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
-
-
-                        android:background="@drawable/border_textview"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Breakfast"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
 
                         >
-                    </TextView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="7 Days Diet-Day 1"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
 
-                    <TextView
-                        android:id="@+id/day1_week_launch"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="25dp"
+                            android:textSize="20sp"
 
+                            />
+                        <TextView
+                            android:id="@+id/day1_week_breakfast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Breakfast"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview2"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Launch"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                            ></TextView>
 
-                        ></TextView>
-                    <TextView
-                        android:id="@+id/day1_week_dinner"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                        <TextView
+                            android:id="@+id/day1_week_launch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Launch"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
+                            ></TextView>
+                        <TextView
+                            android:id="@+id/day1_week_dinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Dinner"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview3"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Dinner"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-
-                        ></TextView>
+                            ></TextView>
+                    </LinearLayout>
 
                 </LinearLayout>
+
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_margin="4dp"
-                android:background="@color/green"
+                android:orientation="vertical"
                 >
-                <TextView
-                    android:id="@+id/day2_week"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="DAY-2"
-                    android:paddingLeft="20dp"
-                    android:textColor="@color/red"
-                    android:paddingRight="20dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
 
-                    />
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/day2_imageview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/image2"
+                        android:clickable="true"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="0dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#AA000000"
+
+                        android:paddingLeft="25dp"
+                        android:textSize="24sp"
+                        android:text="7 Days Diet-Day 2"
+                        android:textColor="#ffffffff" />
+
+                </RelativeLayout>
+
+
+
+
+
+
                 <LinearLayout
+                    android:id="@+id/linear_day2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Breakfast"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-
-                        />
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Launch"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    android:baselineAligned="false"
+                    android:orientation="vertical"
+                    android:visibility="gone"
 
 
-                        />
-                    <TextView
+                    android:background="#EDEBEB"
+                    >
 
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Dinner"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    <LinearLayout
 
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/shadow_2341"
 
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/day2_week_breakfast"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
-
-
-                        android:background="@drawable/border_textview"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Breakfast"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
 
                         >
-                    </TextView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="7 Days Diet-Day 2"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
 
-                    <TextView
-                        android:id="@+id/day2_week_launch"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="25dp"
+                            android:textSize="20sp"
 
+                            />
+                        <TextView
+                            android:id="@+id/day2_week_breakfast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Breakfast"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview2"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Launch"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                            ></TextView>
 
-                        ></TextView>
-                    <TextView
-                        android:id="@+id/day2_week_dinner"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                        <TextView
+                            android:id="@+id/day2_week_launch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Launch"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
+                            ></TextView>
+                        <TextView
+                            android:id="@+id/day2_week_dinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Dinner"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview3"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Dinner"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-
-                        ></TextView>
+                            ></TextView>
+                    </LinearLayout>
 
                 </LinearLayout>
+
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_margin="4dp"
-                android:background="@color/purple_200"
+                android:orientation="vertical"
                 >
-                <TextView
-                    android:id="@+id/day3_week"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="DAY-3"
-                    android:paddingLeft="20dp"
-                    android:textColor="@color/red"
-                    android:paddingRight="20dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
 
-                    />
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/day3_imageview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/image3"
+                        android:clickable="true"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="0dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#AA000000"
+
+                        android:paddingLeft="25dp"
+                        android:textSize="24sp"
+                        android:text="7 Days Diet-Day 3"
+                        android:textColor="#ffffffff" />
+
+                </RelativeLayout>
+
+
+
+
+
+
                 <LinearLayout
+                    android:id="@+id/linear_day3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Breakfast"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-
-                        />
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Launch"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    android:baselineAligned="false"
+                    android:orientation="vertical"
+                    android:visibility="gone"
 
 
-                        />
-                    <TextView
+                    android:background="#EDEBEB"
+                    >
 
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Dinner"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    <LinearLayout
 
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/shadow_2341"
 
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/day3_week_breakfast"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
-
-
-                        android:background="@drawable/border_textview"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Breakfast"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
 
                         >
-                    </TextView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="7 Days Diet-Day 3"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
 
-                    <TextView
-                        android:id="@+id/day3_week_launch"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="25dp"
+                            android:textSize="20sp"
 
+                            />
+                        <TextView
+                            android:id="@+id/day3_week_breakfast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Breakfast"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview2"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Launch"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                            ></TextView>
 
-                        ></TextView>
-                    <TextView
-                        android:id="@+id/day3_week_dinner"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                        <TextView
+                            android:id="@+id/day3_week_launch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Launch"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
+                            ></TextView>
+                        <TextView
+                            android:id="@+id/day3_week_dinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Dinner"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview3"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Dinner"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-
-                        ></TextView>
+                            ></TextView>
+                    </LinearLayout>
 
                 </LinearLayout>
+
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_margin="4dp"
-                android:background="@color/light_blue"
+                android:orientation="vertical"
                 >
-                <TextView
-                    android:id="@+id/day4_week"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="DAY-4"
-                    android:paddingLeft="20dp"
-                    android:textColor="@color/red"
-                    android:paddingRight="20dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
 
-                    />
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/day4_imageview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/image4"
+                        android:clickable="true"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="0dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#AA000000"
+
+                        android:paddingLeft="25dp"
+                        android:textSize="24sp"
+                        android:text="7 Days Diet-Day 4"
+                        android:textColor="#ffffffff" />
+
+                </RelativeLayout>
+
+
+
+
+
+
                 <LinearLayout
+                    android:id="@+id/linear_day4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Breakfast"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-
-                        />
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Launch"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    android:baselineAligned="false"
+                    android:orientation="vertical"
+                    android:visibility="gone"
 
 
-                        />
-                    <TextView
+                    android:background="#EDEBEB"
+                    >
 
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Dinner"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    <LinearLayout
 
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/shadow_2341"
 
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/day4_week_breakfast"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
-
-
-                        android:background="@drawable/border_textview"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Breakfast"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
 
                         >
-                    </TextView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="7 Days Diet-Day 4"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
 
-                    <TextView
-                        android:id="@+id/day4_week_launch"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="25dp"
+                            android:textSize="20sp"
 
+                            />
+                        <TextView
+                            android:id="@+id/day4_week_breakfast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Breakfast"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview2"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Launch"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                            ></TextView>
 
-                        ></TextView>
-                    <TextView
-                        android:id="@+id/day4_week_dinner"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                        <TextView
+                            android:id="@+id/day4_week_launch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Launch"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
+                            ></TextView>
+                        <TextView
+                            android:id="@+id/day4_week_dinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Dinner"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview3"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Dinner"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-
-                        ></TextView>
+                            ></TextView>
+                    </LinearLayout>
 
                 </LinearLayout>
+
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_margin="4dp"
-                android:background="@color/gray"
+                android:orientation="vertical"
                 >
-                <TextView
-                    android:id="@+id/day5_week"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="DAY-5"
-                    android:paddingLeft="20dp"
-                    android:textColor="@color/red"
-                    android:paddingRight="20dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
 
-                    />
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/day5_imageview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/image5"
+                        android:clickable="true"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="0dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#AA000000"
+
+                        android:paddingLeft="25dp"
+                        android:textSize="24sp"
+                        android:text="7 Days Diet-Day 5"
+                        android:textColor="#ffffffff" />
+
+                </RelativeLayout>
+
+
+
+
+
+
                 <LinearLayout
+                    android:id="@+id/linear_day5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Breakfast"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-
-                        />
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Launch"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    android:baselineAligned="false"
+                    android:orientation="vertical"
+                    android:visibility="gone"
 
 
-                        />
-                    <TextView
+                    android:background="#EDEBEB"
+                    >
 
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Dinner"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    <LinearLayout
 
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/shadow_2341"
 
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/day5_week_breakfast"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
-
-
-                        android:background="@drawable/border_textview"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Breakfast"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
 
                         >
-                    </TextView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="7 Days Diet-Day 5"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
 
-                    <TextView
-                        android:id="@+id/day5_week_launch"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="25dp"
+                            android:textSize="20sp"
 
+                            />
+                        <TextView
+                            android:id="@+id/day5_week_breakfast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Breakfast"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview2"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Launch"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                            ></TextView>
 
-                        ></TextView>
-                    <TextView
-                        android:id="@+id/day5_week_dinner"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                        <TextView
+                            android:id="@+id/day5_week_launch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Launch"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
+                            ></TextView>
+                        <TextView
+                            android:id="@+id/day5_week_dinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Dinner"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview3"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Dinner"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-
-                        ></TextView>
+                            ></TextView>
+                    </LinearLayout>
 
                 </LinearLayout>
+
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_margin="4dp"
-                android:background="@color/amber"
+                android:orientation="vertical"
                 >
-                <TextView
-                    android:id="@+id/day6_week"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="DAY-6"
-                    android:paddingLeft="20dp"
-                    android:textColor="@color/red"
-                    android:paddingRight="20dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
 
-                    />
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/day6_imageview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/image6"
+                        android:clickable="true"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="0dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#AA000000"
+
+                        android:paddingLeft="25dp"
+                        android:textSize="24sp"
+                        android:text="7 Days Diet-Day 6"
+                        android:textColor="#ffffffff" />
+
+                </RelativeLayout>
+
+
+
+
+
+
                 <LinearLayout
+                    android:id="@+id/linear_day6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Breakfast"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-
-                        />
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Launch"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    android:baselineAligned="false"
+                    android:orientation="vertical"
+                    android:visibility="gone"
 
 
-                        />
-                    <TextView
+                    android:background="#EDEBEB"
+                    >
 
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Dinner"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    <LinearLayout
 
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/shadow_2341"
 
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/day6_week_breakfast"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
-
-
-                        android:background="@drawable/border_textview"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Breakfast"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
 
                         >
-                    </TextView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="7 Days Diet-Day 6"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
 
-                    <TextView
-                        android:id="@+id/day6_week_launch"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="25dp"
+                            android:textSize="20sp"
 
+                            />
+                        <TextView
+                            android:id="@+id/day6_week_breakfast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Breakfast"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview2"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Launch"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                            ></TextView>
 
-                        ></TextView>
-                    <TextView
-                        android:id="@+id/day6_week_dinner"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                        <TextView
+                            android:id="@+id/day6_week_launch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Launch"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
+                            ></TextView>
+                        <TextView
+                            android:id="@+id/day6_week_dinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Dinner"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview3"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Dinner"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-
-                        ></TextView>
+                            ></TextView>
+                    </LinearLayout>
 
                 </LinearLayout>
+
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_margin="4dp"
-                android:background="@color/light_blue"
+                android:orientation="vertical"
                 >
-                <TextView
-                    android:id="@+id/day7_week"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="DAY-6"
-                    android:paddingLeft="20dp"
-                    android:textColor="@color/red"
-                    android:paddingRight="20dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
 
-                    />
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/day7_imageview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/image7"
+                        android:clickable="true"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="0dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#AA000000"
+
+                        android:paddingLeft="25dp"
+                        android:textSize="24sp"
+                        android:text="7 Days Diet-Day 7"
+                        android:textColor="#ffffffff" />
+
+                </RelativeLayout>
+
+
+
+
+
+
                 <LinearLayout
+                    android:id="@+id/linear_day7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Breakfast"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-
-                        />
-                    <TextView
-
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Launch"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    android:baselineAligned="false"
+                    android:orientation="vertical"
+                    android:visibility="gone"
 
 
-                        />
-                    <TextView
+                    android:background="#EDEBEB"
+                    >
 
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_height="wrap_content"
-                        android:text="Dinner"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
+                    <LinearLayout
 
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/shadow_2341"
 
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/day7_week_breakfast"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
-
-
-                        android:background="@drawable/border_textview"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Breakfast"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
 
                         >
-                    </TextView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="7 Days Diet-Day 7"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
 
-                    <TextView
-                        android:id="@+id/day7_week_launch"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="25dp"
+                            android:textSize="20sp"
 
+                            />
+                        <TextView
+                            android:id="@+id/day7_week_breakfast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Breakfast"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview2"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Launch"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
+                            ></TextView>
 
-                        ></TextView>
-                    <TextView
-                        android:id="@+id/day7_week_dinner"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="115dp"
-                        android:layout_gravity="center"
+                        <TextView
+                            android:id="@+id/day7_week_launch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Launch"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
+                            ></TextView>
+                        <TextView
+                            android:id="@+id/day7_week_dinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:paddingLeft="25dp"
+                            android:paddingTop="10dp"
+                            android:textSize="18sp"
+                            android:text=" Dinner"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
 
-                        android:background="@drawable/border_textview3"
-                        android:padding="15dp"
-                        android:scrollbarSize="22sp"
-                        android:text=" Dinner"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-
-                        ></TextView>
+                            ></TextView>
+                    </LinearLayout>
 
                 </LinearLayout>
+
+
             </LinearLayout>
+
+
 
         </LinearLayout>
 

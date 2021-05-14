@@ -9,9 +9,11 @@ import androidx.fragment.app.Fragment;
 
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -87,6 +89,24 @@ public class FragmentContent extends Fragment {
     TextView day5_week;
     TextView day6_week;
     TextView day7_week;
+    int counter=0;
+
+    LinearLayout linear_day1;
+    LinearLayout linear_day2;
+    LinearLayout linear_day3;
+    LinearLayout linear_day4;
+    LinearLayout linear_day5;
+    LinearLayout linear_day6;
+    LinearLayout linear_day7;
+
+    ImageView day1_imageview;
+    ImageView day2_imageview;
+    ImageView day3_imageview;
+    ImageView day4_imageview;
+    ImageView day5_imageview;
+    ImageView day6_imageview;
+    ImageView day7_imageview;
+
 
 
 
@@ -132,6 +152,8 @@ public class FragmentContent extends Fragment {
 
         LLayout_day=view.findViewById(R.id.LLayout_day);
         LLayout_week=view.findViewById(R.id.LLayout_week);
+
+        getDiet();
 
 
 
@@ -181,6 +203,55 @@ public class FragmentContent extends Fragment {
         }
 
 
+    }
+
+    private void getDiet() {
+        day1_imageview=getView().findViewById(R.id.day1_imageview);
+        linear_day1=getView().findViewById(R.id.linear_day1);
+
+        day2_imageview=getView().findViewById(R.id.day2_imageview);
+        linear_day2=getView().findViewById(R.id.linear_day2);
+
+        day3_imageview=getView().findViewById(R.id.day3_imageview);
+        linear_day3=getView().findViewById(R.id.linear_day3);
+
+        day4_imageview=getView().findViewById(R.id.day4_imageview);
+        linear_day4=getView().findViewById(R.id.linear_day4);
+
+        day5_imageview=getView().findViewById(R.id.day5_imageview);
+        linear_day5=getView().findViewById(R.id.linear_day5);
+
+        day6_imageview=getView().findViewById(R.id.day6_imageview);
+        linear_day6=getView().findViewById(R.id.linear_day6);
+
+        day7_imageview=getView().findViewById(R.id.day7_imageview);
+        linear_day7=getView().findViewById(R.id.linear_day7);
+
+
+        setIBtn(day1_imageview,linear_day1);
+        setIBtn(day2_imageview,linear_day2);
+        setIBtn(day3_imageview,linear_day3);
+        setIBtn(day4_imageview,linear_day4);
+        setIBtn(day5_imageview,linear_day5);
+        setIBtn(day6_imageview,linear_day6);
+        setIBtn(day7_imageview,linear_day7);
+
+    }
+
+    private void setIBtn(ImageView imageView,LinearLayout layout) {
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (layout.getVisibility()==View.GONE){
+                    layout.setVisibility(View.VISIBLE);
+
+                }else
+                    layout.setVisibility(View.GONE);
+
+
+            }
+        });
     }
 
     public void getMenu(String bmi_state){
@@ -343,13 +414,13 @@ public class FragmentContent extends Fragment {
                         day7_week_breakfast.setText(m19.menu);
                         day7_week_launch.setText(m20.menu);
                         day7_week_dinner.setText(m21.menu);
-                        day1_week.setText(dates.get(0));
+                        /*day1_week.setText(dates.get(0));
                         day2_week.setText(dates.get(1));
                         day3_week.setText(dates.get(2));
                         day4_week.setText(dates.get(3));
                         day5_week.setText(dates.get(4));
                         day6_week.setText(dates.get(5));
-                        day7_week.setText(dates.get(6));
+                        day7_week.setText(dates.get(6));*/
 
 
                     }
@@ -392,16 +463,18 @@ public class FragmentContent extends Fragment {
              day7_week_breakfast=getView().findViewById(R.id.day7_week_breakfast);
              day7_week_launch=getView().findViewById(R.id.day7_week_launch);
              day7_week_dinner=getView().findViewById(R.id.day7_week_dinner);
-             day1_week=getView().findViewById(R.id.day1_week);
+             /*day1_week=getView().findViewById(R.id.day1_week);
              day2_week=getView().findViewById(R.id.day2_week);
              day3_week=getView().findViewById(R.id.day3_week);
              day4_week=getView().findViewById(R.id.day4_week);
              day5_week=getView().findViewById(R.id.day5_week);
              day6_week=getView().findViewById(R.id.day6_week);
-             day7_week=getView().findViewById(R.id.day7_week);
+             day7_week=getView().findViewById(R.id.day7_week);*/
              ArrayList<String> dates=getDateF();
 
 
+             LinearLayout linear_day1;
+             linear_day1=getView().findViewById(R.id.linear_day1);
 
             getMenuWeek(bmi_state,dates);
 
