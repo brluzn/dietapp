@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bg"
     tools:context=".Activities.DetailsActivity">
 
     <TextView
@@ -20,6 +21,7 @@
         android:textColor="@color/red"
         />
 
+
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="450dp"
@@ -30,31 +32,45 @@
             android:id="@+id/youtube_player_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
 
             app:videoId="S0Q4gqBUs7c"
             app:autoPlay="false"
             app:showFullScreenButton="false" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ingredients"
-            android:textStyle="bold"
-            android:textSize="22sp"
-            android:paddingLeft="5dp"
-            android:layout_marginTop="20dp"
-            />
+         <LinearLayout
 
-        <TextView
-            android:id="@+id/recipe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="1 Eggs\n5 Spagetti\n1 lt water"
-            android:textSize="18sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/shadow_2341"
 
-            android:padding="5dp"
 
-            />
+                        >
+                        <TextView
+                            android:id="@+id/details_time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Launch"
+                            android:textColor="@color/green"
+                            android:textStyle="bold"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="25dp"
+                            android:textSize="20sp"
+
+                            />
+
+                         <TextView
+                             android:id="@+id/recipe"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:text="1 Eggs\n5 Spagetti\n1 lt water"
+                             android:textSize="18sp"
+
+                             android:paddingTop="5dp"
+                             android:paddingLeft="20dp"
+                             />
+         </LinearLayout>
 
     </LinearLayout>
     <Button

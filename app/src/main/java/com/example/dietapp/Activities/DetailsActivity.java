@@ -26,6 +26,7 @@ public class DetailsActivity extends AppCompatActivity {
     Button btn;
     TextView recipe_title;
     TextView recipe;
+    TextView details_time;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         recipe_title=findViewById(R.id.recipe_title);
         recipe=findViewById(R.id.recipe);
+        details_time=findViewById(R.id.details_time);
         btn=findViewById(R.id.btn_home);
 
         Bundle data=getIntent().getExtras();
@@ -69,6 +71,7 @@ public class DetailsActivity extends AppCompatActivity {
 
                 if (m1!=null){
                     recipe.setText(m1.menu);
+                    details_time.setText(time);
                 }
 
 
