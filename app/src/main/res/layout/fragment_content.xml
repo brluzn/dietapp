@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:padding="5dp"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:id="@+id/today"
@@ -125,22 +125,21 @@
                         <Button
                             android:id="@+id/breakfast_details"
 
-                            android:layout_marginTop="10dp"
                             android:layout_width="200dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
 
-                            android:background="@drawable/buttonshape"
+                            android:background="@color/purple_500"
                             android:foregroundTint="@color/black"
                             android:shadowColor="#A8A8A8"
                             android:shadowDx="-1"
-
+                            android:layout_marginBottom="10dp"
                             android:shadowDy="0"
                             android:shadowRadius="5"
                             android:text="Detaıls"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp"
-                            app:backgroundTint="#3AC613"
                             app:backgroundTintMode="screen" />
 
 
@@ -150,12 +149,12 @@
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -176,16 +175,16 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
                         android:layout_gravity="center"
                         android:layout_margin="0dp"
-                        android:layout_alignParentBottom="true"
                         android:background="#AA000000"
 
                         android:paddingLeft="25dp"
                         android:paddingRight="25dp"
-                        android:textSize="24sp"
                         android:text="Launch"
-                        android:textColor="#ffffffff" />
+                        android:textColor="#ffffffff"
+                        android:textSize="24sp" />
 
                 </RelativeLayout>
 
@@ -194,67 +193,66 @@
                     android:id="@+id/linear_launch"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="#EDEBEB"
                     android:baselineAligned="false"
                     android:orientation="vertical"
-                    android:visibility="gone"
 
 
-                    android:background="#EDEBEB"
-                    >
+                    android:visibility="gone">
 
                     <LinearLayout
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
                         android:background="@drawable/shadow_2341"
+                        android:orientation="vertical"
 
 
                         >
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Launch"
-                            android:textColor="@color/green"
-                            android:textStyle="bold"
-
                             android:paddingLeft="25dp"
                             android:paddingTop="25dp"
+                            android:text="Launch"
+
+                            android:textColor="@color/green"
                             android:textSize="20sp"
+                            android:textStyle="bold"
 
                             />
+
                         <TextView
                             android:id="@+id/launch_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginBottom="9dp"
                             android:paddingLeft="25dp"
                             android:paddingTop="10dp"
-                            android:textSize="18sp"
                             android:text=" Launch"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:layout_marginBottom="9dp"
-                            ></TextView>
+                            android:textSize="18sp"
+                            android:textStyle="bold"></TextView>
 
                         <Button
                             android:id="@+id/launch_details"
-                            android:layout_marginTop="10dp"
                             android:layout_width="200dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
 
-                            android:background="@drawable/buttonshape"
-                            android:foregroundTint="@color/black"
+                            android:background="@color/purple_500"
                             android:shadowColor="#A8A8A8"
                             android:shadowDx="-1"
 
+                            android:layout_marginBottom="10dp"
                             android:shadowDy="0"
                             android:shadowRadius="5"
                             android:text="Detaıls"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp"
-                            app:backgroundTint="#3AC613"
                             app:backgroundTintMode="screen" />
 
 
@@ -264,6 +262,7 @@
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -347,6 +346,7 @@
                             android:textStyle="bold"
                             android:layout_marginBottom="9dp"
                             ></TextView>
+
                         <Button
                             android:id="@+id/dinner_details"
 
@@ -354,17 +354,17 @@
                             android:layout_height="40dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="10dp"
-                            android:background="@drawable/buttonshape"
+                            android:background="@color/purple_500"
                             android:foregroundTint="@color/black"
                             android:shadowColor="#A8A8A8"
                             android:shadowDx="-1"
 
+                            android:layout_marginBottom="10dp"
                             android:shadowDy="0"
                             android:shadowRadius="5"
                             android:text="Detaıls"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp"
-                            app:backgroundTint="#3AC613"
                             app:backgroundTintMode="screen" />
 
 

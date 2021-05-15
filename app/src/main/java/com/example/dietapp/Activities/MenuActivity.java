@@ -8,7 +8,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
@@ -72,6 +74,8 @@ public class MenuActivity extends AppCompatActivity {
     public TextView bmi;
 
     CircleImageView profile_image;
+
+
 
 
     @Override

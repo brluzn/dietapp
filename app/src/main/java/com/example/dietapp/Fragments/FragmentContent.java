@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dietapp.Activities.DetailsActivity;
 import com.example.dietapp.Activities.LoginActivity;
@@ -184,7 +185,10 @@ public class FragmentContent extends Fragment {
 
 
             else if (tiTle=="Profile"){
+
+
                 loadUserInfo();
+
                 LLayout_week.setVisibility(View.VISIBLE);
                 LLayout_day.setVisibility(View.GONE);
 
@@ -318,7 +322,7 @@ public class FragmentContent extends Fragment {
     public void loadUserInfo(){
 
 
-        String bmi_state=new String();
+
         FirebaseUser currentUser=auth.getCurrentUser();
 
         DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
@@ -331,10 +335,18 @@ public class FragmentContent extends Fragment {
                 UserInfo a=snapshot.getValue(UserInfo.class);
                 user_info.add(a);
 
-                String bmi_state=user_info.get(0).user_bmi_state;
-                SettextWeek(bmi_state);
-                getMenu(bmi_state);
-                System.out.println("BBBBB"+ bmi_state);
+
+                if (snapshot.exists() && snapshot.getChildrenCount()>0){
+                    String bmi_state=user_info.get(0).user_bmi_state;
+                    SettextWeek(bmi_state);
+                    getMenu(bmi_state);
+                    System.out.println("BBBBB"+ bmi_state);
+                }else{
+                    Intent intent = new Intent(getContext(), MainActivity.class);
+                    startActivity(intent);
+                    Toast.makeText(getContext(), "Please Set Profile", Toast.LENGTH_SHORT).show();
+                }
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -415,27 +427,27 @@ public class FragmentContent extends Fragment {
                     if (m1!=null||m2!=null||m3!=null){
 
 
-                        day1_week_breakfast.setText(m1.menu);
-                        day1_week_launch.setText(m2.menu);
-                        day1_week_dinner.setText(m3.menu);
-                        day2_week_breakfast.setText(m4.menu);
-                        day2_week_launch.setText(m5.menu);
-                        day2_week_dinner.setText(m6.menu);
-                        day3_week_breakfast.setText(m7.menu);
-                        day3_week_launch.setText(m8.menu);
-                        day3_week_dinner.setText(m9.menu);
-                        day4_week_breakfast.setText(m10.menu);
-                        day4_week_launch.setText(m11.menu);
-                        day4_week_dinner.setText(m12.menu);
-                        day5_week_breakfast.setText(m13.menu);
-                        day5_week_launch.setText(m14.menu);
-                        day5_week_dinner.setText(m15.menu);
-                        day6_week_breakfast.setText(m16.menu);
-                        day6_week_launch.setText(m17.menu);
-                        day6_week_dinner.setText(m18.menu);
-                        day7_week_breakfast.setText(m19.menu);
-                        day7_week_launch.setText(m20.menu);
-                        day7_week_dinner.setText(m21.menu);
+                        day1_week_breakfast.setText("Breakfast\n\n"+m1.menu);
+                        day1_week_launch.setText("Launch\n\n"+m2.menu);
+                        day1_week_dinner.setText("Dinner\n\n"+m3.menu);
+                        day2_week_breakfast.setText("Breakfast\n\n"+m4.menu);
+                        day2_week_launch.setText("Launch\n\n"+m5.menu);
+                        day2_week_dinner.setText("Dinner\n\n"+m6.menu);
+                        day3_week_breakfast.setText("Breakfast\n\n"+m7.menu);
+                        day3_week_launch.setText("Launch\n\n"+m8.menu);
+                        day3_week_dinner.setText("Dinner\n\n"+m9.menu);
+                        day4_week_breakfast.setText("Breakfast\n\n"+m10.menu);
+                        day4_week_launch.setText("Launch\n\n"+m11.menu);
+                        day4_week_dinner.setText("Dinner\n\n"+m12.menu);
+                        day5_week_breakfast.setText("Breakfast\n\n"+m13.menu);
+                        day5_week_launch.setText("Launch\n\n"+m14.menu);
+                        day5_week_dinner.setText("Dinner\n\n"+m15.menu);
+                        day6_week_breakfast.setText("Breakfast\n\n"+m16.menu);
+                        day6_week_launch.setText("Launch\n\n"+m17.menu);
+                        day6_week_dinner.setText("Dinner\n\n"+m18.menu);
+                        day7_week_breakfast.setText("Breakfast\n\n"+m19.menu);
+                        day7_week_launch.setText("Launch\n\n"+m20.menu);
+                        day7_week_dinner.setText("Dinner\n\n"+m21.menu);
 
 
 

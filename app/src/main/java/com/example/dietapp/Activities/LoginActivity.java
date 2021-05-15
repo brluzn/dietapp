@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dietapp.R;
@@ -23,6 +25,8 @@ public class LoginActivity extends AppCompatActivity {
     TextInputEditText login_password_edittext;
     Button btn_login_signIn;
     Button btn_login_signUp;
+
+    TextView reset_password;
 
     FirebaseAuth auth= FirebaseAuth.getInstance();
 
@@ -59,7 +63,20 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
+        reset_password=findViewById(R.id.reset_password);
+
+        reset_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginActivity.this, ResetPassActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 
     private void signIn(String email,String password){
 
@@ -70,6 +87,8 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent=new Intent(LoginActivity.this, MenuActivity.class);
                     startActivity(intent);
                     finish();
+
+
 
                 }else {
                     Toast.makeText(LoginActivity.this, "Lütfen Bilgilerinizi Kontrol Edin", Toast.LENGTH_SHORT).show();

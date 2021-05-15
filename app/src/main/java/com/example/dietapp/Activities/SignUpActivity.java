@@ -69,7 +69,7 @@ public class SignUpActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(SignUpActivity.this, "SUCCESSFUL", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(SignUpActivity.this, LoginActivity.class);
+                    Intent intent=new Intent(SignUpActivity.this, MenuActivity.class);
                     startActivity(intent);
                     finish();
 

@@ -1,86 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/bg"
-    tools:context=".Activities.DetailsActivity">
-
-    <TextView
-        android:id="@+id/recipe_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="How to do Boiled Eggs"
-        android:textSize="24sp"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="15dp"
-        android:textColor="@color/red"
-        />
-
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="350dp"
-        android:layout_height="450dp"
-        android:layout_gravity="center"
-        android:orientation="vertical">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
 
-        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-            android:id="@+id/youtube_player_view"
-            android:layout_width="match_parent"
+        tools:context=".Activities.DetailsActivity">
+
+        <TextView
+            android:id="@+id/recipe_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-
-            app:videoId="948mcYdlhRk"
-            app:autoPlay="false"
-            app:showFullScreenButton="false" />
-
-         <LinearLayout
-
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:background="@drawable/shadow_2341"
+            android:text="How to do Boiled Eggs"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/red"
+            />
 
 
-                        >
-                        <TextView
-                            android:id="@+id/details_time"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Launch"
-                            android:textColor="@color/green"
-                            android:textStyle="bold"
-                            android:paddingLeft="20dp"
-                            android:paddingTop="25dp"
-                            android:textSize="20sp"
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="450dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
-                            />
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:id="@+id/youtube_player_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
 
-                         <TextView
-                             android:id="@+id/recipe"
-                             android:layout_width="match_parent"
-                             android:layout_height="wrap_content"
-                             android:text="1 Eggs\n5 Spagetti\n1 lt water"
-                             android:textSize="18sp"
+                app:videoId="948mcYdlhRk"
+                app:autoPlay="false"
+                app:showFullScreenButton="false" />
 
-                             android:paddingTop="5dp"
-                             android:paddingLeft="20dp"
-                             />
-         </LinearLayout>
+            <LinearLayout
 
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/shadow_2341"
+
+
+                >
+                <TextView
+                    android:id="@+id/details_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Launch"
+                    android:textColor="@color/green"
+                    android:textStyle="bold"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="25dp"
+                    android:textSize="20sp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/recipe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1 Eggs\n5 Spagetti\n1 lt water"
+                    android:textSize="18sp"
+
+                    android:paddingTop="5dp"
+                    android:paddingLeft="20dp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/amber"
+            android:text="Home"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+
+            />
     </LinearLayout>
-    <Button
-        android:id="@+id/btn_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/amber"
-        android:text="Home"
-        android:textColor="@color/black"
-        android:layout_gravity="center"
-
-        />
-</LinearLayout>
+</ScrollView>
