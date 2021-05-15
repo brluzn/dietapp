@@ -19,6 +19,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -27,6 +30,9 @@ public class DetailsActivity extends AppCompatActivity {
     TextView recipe_title;
     TextView recipe;
     TextView details_time;
+
+    YouTubePlayerView youTubePlayerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +42,9 @@ public class DetailsActivity extends AppCompatActivity {
         recipe=findViewById(R.id.recipe);
         details_time=findViewById(R.id.details_time);
         btn=findViewById(R.id.btn_home);
+
+
+
 
         Bundle data=getIntent().getExtras();
 
@@ -70,11 +79,13 @@ public class DetailsActivity extends AppCompatActivity {
 
 
                 if (m1!=null){
-                    recipe.setText(m1.menu);
+                    recipe.setText(m1.recipe);
                     details_time.setText(time);
+                    recipe_title.setText(m1.recipe_title);
+                    System.out.println(recipe);
+
+
                 }
-
-
 
             }
             @Override

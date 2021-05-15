@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DietApp">
-        <activity android:name=".Activities.DetailsActivity"></activity>
-        <activity android:name=".Activities.MenuActivity"></activity>
+        <activity android:name=".Activities.PasswordActivity"></activity>
+        <activity android:name=".Activities.DetailsActivity" />
+        <activity android:name=".Activities.MenuActivity" />
         <activity android:name=".Activities.SignUpActivity" />
         <activity android:name=".Activities.LoginActivity">
             <intent-filter>

@@ -21,6 +21,7 @@ import com.example.dietapp.Activities.DetailsActivity;
 import com.example.dietapp.Activities.LoginActivity;
 import com.example.dietapp.Activities.MainActivity;
 import com.example.dietapp.Activities.MenuActivity;
+import com.example.dietapp.Activities.PasswordActivity;
 import com.example.dietapp.Models.MenuModel;
 import com.example.dietapp.Models.UserInfo;
 import com.example.dietapp.R;
@@ -176,6 +177,12 @@ public class FragmentContent extends Fragment {
                 Intent intent = new Intent(getContext(), LoginActivity.class);
                 startActivity(intent);
             }
+            else if (tiTle=="Change Password"){
+                Intent intent = new Intent(getContext(), PasswordActivity.class);
+                startActivity(intent);
+            }
+
+
             else if (tiTle=="Profile"){
                 loadUserInfo();
                 LLayout_week.setVisibility(View.VISIBLE);
@@ -192,9 +199,6 @@ public class FragmentContent extends Fragment {
                 loadUserInfo();
                 LLayout_week.setVisibility(View.GONE);
                 LLayout_day.setVisibility(View.VISIBLE);
-
-
-
 
 
             }

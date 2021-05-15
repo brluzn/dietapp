@@ -200,7 +200,7 @@ public class MenuActivity extends AppCompatActivity {
         List<String> childitem3=Arrays.asList(dates.get(14),dates.get(15),dates.get(16),dates.get(17),dates.get(18),dates.get(19),dates.get(20));
         List<String> childitem4=Arrays.asList(dates.get(21),dates.get(22),dates.get(23),dates.get(24),dates.get(25),dates.get(26),dates.get(27));
 
-        List<String> childitemprofile=Arrays.asList("Edit Profile","Logout");
+        List<String> childitemprofile=Arrays.asList("Edit Profile","Change Password","Logout");
 
         lstChild=  new TreeMap<>();
         lstChild.put(title.get(0),childitemprofile);
