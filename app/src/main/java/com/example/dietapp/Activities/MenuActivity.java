@@ -33,6 +33,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
@@ -44,6 +45,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -68,6 +71,8 @@ public class MenuActivity extends AppCompatActivity {
     public TextView height;
     public TextView bmi;
 
+    CircleImageView profile_image;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,12 +92,14 @@ public class MenuActivity extends AppCompatActivity {
         View listHeaderView=getLayoutInflater().inflate(R.layout.drawer_header_layout,null,false);
         expandableListView.addHeaderView(listHeaderView);
 
+        profile_image=listHeaderView.findViewById(R.id.drawerprofile);
 
         username=listHeaderView.findViewById(R.id.drawer_userName_textView);
         weight=listHeaderView.findViewById(R.id.drawer_weight_textView);
         height=listHeaderView.findViewById(R.id.drawer_height_textView);
         bmi=listHeaderView.findViewById(R.id.drawer_bmi_textView);
 
+        getUserInfo(profile_image);
         loadData();
         getDate();
 
@@ -296,6 +303,30 @@ public class MenuActivity extends AppCompatActivity {
 
 
         return date_lists;
+
+    }
+
+    private void getUserInfo(CircleImageView profile_image) {
+        DatabaseReference reference;
+
+        reference=FirebaseDatabase.getInstance().getReference().child("User");
+
+        reference.child(auth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists() && snapshot.getChildrenCount()>0){
+                    if (snapshot.hasChild("image")){
+                        String image=snapshot.child("image").getValue().toString();
+                        Picasso.get().load(image).into(profile_image);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull  DatabaseError error) {
+
+            }
+        });
 
     }
 

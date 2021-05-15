@@ -1,9 +1,13 @@
 package com.example.dietapp.Activities;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.hardware.usb.UsbRequest;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,12 +19,26 @@ import android.widget.RadioGroup;
 
 import com.example.dietapp.Models.UserInfo;
 import com.example.dietapp.R;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
+import com.squareup.picasso.Picasso;
+import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,21 +51,27 @@ public class MainActivity extends AppCompatActivity {
     EditText weight_input;
     FrameLayout frameLayout;
 
+    CircleImageView profile_image;
+
+    Uri image_uri;
+    private String my_uri="";
+
     FirebaseAuth auth= FirebaseAuth.getInstance();
+    private StorageTask uploadTask;
+    private StorageReference storageProfilePicsRef;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*LayoutInflater inflater=LayoutInflater.from(this);
-        View view=inflater.inflate(R.layout.activity_main,null,false);
-        drawerLayout.addView(view,0);
-        frameLayout=findViewById(R.id.frame);
-        frameLayout.setVisibility(View.INVISIBLE);*/
+
 
         FirebaseUser currentUser=auth.getCurrentUser();
         FirebaseUser cUser=currentUser;
+
+        storageProfilePicsRef= FirebaseStorage.getInstance().getReference().child("Profile Pics");
+        profile_image=findViewById(R.id.profile_image);
 
 
 
@@ -60,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
         height_input=findViewById(R.id.height_input);
         weight_input=findViewById(R.id.weight_input);
 
+        profile_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CropImage.activity().setAspectRatio(1,1).start(MainActivity.this);
+            }
+        });
+
+        getUserInfo();
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 String height=height_input.getText().toString();
                 String weight=weight_input.getText().toString();
                 String gender=radioButton.getText().toString();
+
 
                 String bmi_state=new String();
 
@@ -109,15 +142,56 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
                 Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
                 startActivity(intent);
                 finish();
             }
+
+
         });
 
 
 
 
+    }
+
+    private void getUserInfo() {
+        DatabaseReference reference;
+
+        reference=FirebaseDatabase.getInstance().getReference().child("User");
+
+        reference.child(auth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists() && snapshot.getChildrenCount()>0){
+                    if (snapshot.hasChild("image")){
+                        String image=snapshot.child("image").getValue().toString();
+                        Picasso.get().load(image).into(profile_image);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull  DatabaseError error) {
+
+            }
+        });
+
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode==CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode==RESULT_OK && data!=null){
+            CropImage.ActivityResult result=CropImage.getActivityResult(data);
+            image_uri=result.getUri();
+            profile_image.setImageURI(image_uri);
+            uploadProfileImage();
+        }else
+            System.out.println("URi ERROR");
     }
 
     public void checkRadioButton(View view){
@@ -126,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void SendDatabase(UserInfo user,FirebaseUser cUser){
+    public void SendDatabase(UserInfo user,FirebaseUser cUser) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         System.out.println(cUser);
@@ -138,6 +212,57 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+
+    private void uploadProfileImage() {
+        DatabaseReference reference;
+        reference=FirebaseDatabase.getInstance().getReference().child("User");
+
+        final ProgressDialog progressDialog=new ProgressDialog(this);
+        progressDialog.setTitle("Set Your Profile Image");
+        progressDialog.setMessage("Please wait,while we are setting your data");
+        progressDialog.show();
+
+        if (image_uri!=null){
+            final StorageReference fileRef=storageProfilePicsRef.child(auth.getCurrentUser().getUid()+".jpg");
+            uploadTask=fileRef.putFile(image_uri);
+
+            uploadTask.continueWithTask(new Continuation() {
+                @Override
+                public Object then(@NonNull  Task task) throws Exception {
+
+                    if (!task.isSuccessful()){
+                        throw task.getException();
+                    }
+
+                    return fileRef.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull  Task<Uri> task) {
+                    if (task.isSuccessful()){
+
+                        Uri downloadUri=  task.getResult();
+                        my_uri=downloadUri.toString();
+
+                        HashMap<String,Object> userMap=new HashMap<>();
+                        userMap.put("image",my_uri);
+
+                        reference.child(auth.getCurrentUser().getUid()).updateChildren(userMap);
+
+                        progressDialog.dismiss();
+
+
+
+                    }
+                }
+            });
+        }else
+            progressDialog.dismiss();
+
+    }
+
 
 
 }
