@@ -11,6 +11,11 @@ import android.widget.TextView;
 
 import com.example.dietapp.Models.MenuModel;
 import com.example.dietapp.R;
+import com.example.dietapp.YoutubeConfig;
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -19,12 +24,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
-public class DetailsActivity extends AppCompatActivity {
+public class DetailsActivity extends YouTubeBaseActivity {
 
+    private static final String TAG="DetailsActivity";
     FirebaseAuth auth= FirebaseAuth.getInstance();
     Button btn;
     TextView recipe_title;
@@ -32,6 +35,8 @@ public class DetailsActivity extends AppCompatActivity {
     TextView details_time;
 
     YouTubePlayerView youTubePlayerView;
+    YouTubePlayer.OnInitializedListener onInitializedListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,7 @@ public class DetailsActivity extends AppCompatActivity {
         recipe=findViewById(R.id.recipe);
         details_time=findViewById(R.id.details_time);
         btn=findViewById(R.id.btn_home);
+
 
 
 
@@ -84,6 +90,21 @@ public class DetailsActivity extends AppCompatActivity {
                     recipe_title.setText(m1.recipe_title);
                     System.out.println(recipe);
 
+                    youTubePlayerView=findViewById(R.id.youtube_play);
+                    onInitializedListener=new YouTubePlayer.OnInitializedListener() {
+                        @Override
+                        public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+
+                            youTubePlayer.loadVideo(m1.video);
+                        }
+
+                        @Override
+                        public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+
+                        }
+                    };
+
+                    youTubePlayerView.initialize(YoutubeConfig.getApiKey(),onInitializedListener);
 
                 }
 

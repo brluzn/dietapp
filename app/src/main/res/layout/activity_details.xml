@@ -8,9 +8,6 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -36,15 +33,7 @@
             android:layout_gravity="center"
             android:orientation="vertical">
 
-            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-                android:id="@+id/youtube_player_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
 
-                app:videoId="948mcYdlhRk"
-                app:autoPlay="false"
-                app:showFullScreenButton="false" />
 
             <LinearLayout
 
@@ -55,6 +44,14 @@
 
 
                 >
+
+
+                <view
+                    android:id="@+id/youtube_play"
+                    class="com.google.android.youtube.player.YouTubePlayerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
                 <TextView
                     android:id="@+id/details_time"
                     android:layout_width="match_parent"
