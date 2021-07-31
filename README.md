@@ -18,7 +18,7 @@
 
 ## UI
 
-
+https://user-images.githubusercontent.com/42109123/127736298-58adba18-2ee5-40b0-bc81-c545aa7ff758.mp4
 
 - Youtube : https://www.youtube.com/watch?v=SJZN4PQzbY8&ab_channel=BirolUzun
 
